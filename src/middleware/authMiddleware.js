@@ -1,10 +1,12 @@
+
+const ensureDBConnection = require("../config/Db.js")
 module.exports = (handler) => {
   return async (req, res) => {
     try {
-      //  await ensureDBConnection();
-
+        await ensureDBConnection()
+        console.log(`DB connection passed`)
         const response = await handler(req, res);
-
+       // console.log({response});
         const statusCode = res?.statusCode || 200;
         res.status(statusCode).json({
             type: 'SUCCESS',

@@ -9,6 +9,7 @@ router.post('/upload',upload.single('resume'),handleFileValidationError,authMidd
 
  res.message = "Resume uploaded successfully";
  const resume = await resumeUpload(req.file);
+ return resume;
 }))
 
 module.exports = router;

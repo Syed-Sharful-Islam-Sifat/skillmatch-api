@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const resumeRoutes = require('./routes/resumeRoutes');
+require("dotenv").config();
 // Initialize express app
 const app = express();
 const PORT = process.env.PORT || 3000;
